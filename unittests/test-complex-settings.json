@@ -1,0 +1,103 @@
+﻿{
+    "StartingPort": 6000,
+    "Streams": [
+        {
+            "File": "2023-Hoverfly_500-Night.mp4"
+        },
+        {
+            "Text": "Testing\n{{datetime}}",
+            "Port": 7000
+        },
+        {
+            "File": "AXIS-1000_meters_night-Person.mp4"
+        },
+        {
+            "File": "AXIS_1000_Day.mp4"
+        },
+        {
+            "File": "Axis_1000_inandout.mp4"
+        },
+        {
+            "File": "AXIS_250_Inandout.mp4"
+        },
+        {
+            "File": "AXIS_Day_2000.mp4"
+        },
+        {
+            "File": "AXIS_Dust_Storm_inandout.mp4"
+        },
+        {
+            "File": "AXIS_IR_Transition.mp4"
+        },
+        {
+            "File": "AXIS_NIGHT_2000.mp4"
+        },
+        {
+            "File": "AXIS_Thermal_transition-MinZoom.mp4"
+        },
+        {
+            "File": "Axis_transition.mp4"
+        },
+        {
+            "File": "AXIS_Visible_250_transition-MinZoom.mp4"
+        },
+        {
+            "File": "BOSCH9000I-DustStorm_inandout.mp4"
+        },
+        {
+            "File": "BOSCH_1000_meters_night-Person.mp4"
+        },
+        {
+            "File": "BOSCH_1000_NIGHT.mp4"
+        },
+        {
+            "File": "BOSCH_Day_2000.mp4"
+        },
+        {
+            "File": "BOSCH_Thermal_250_transition-MinZoom.mp4"
+        },
+        {
+            "File": "BOSCH_Visible_transition-MinZoom.mp4"
+        },
+        {
+            "File": "Hoverfly_1000_night.mp4"
+        },
+        {
+            "File": "InfinitiIR_1000_meters_night-Person.mp4"
+        },
+        {
+            "File": "INFINITI_DAY_2000.mp4"
+        },
+        {
+            "File": "INFINITI_NIGHT_2000.mp4"
+        },
+        {
+            "File": "Infiniti_Thermal_250_transition-MinZoom.mp4"
+        },
+        {
+            "File": "Infiniti_transition.mp4"
+        },
+        {
+            "File": "Infiniti_Visible_250_transition-MinZoom.mp4"
+        },
+        {
+            "File": "OpgalIR-1000_meters_night-Person.mp4"
+        },
+        {
+            "File": "OPGAL_1000_day.mp4"
+        },
+        {
+            "File": "OPGAL_IR_1000.mp4"
+        },
+        {
+            "File": "OPGAL_IR_Transition.mp4",
+            "Port": 223344
+        },
+        {
+            "File": "Opgal_Thermal_250_transition-MinZoom.mp4"
+        },
+        {
+            "File": "Opgal_Visible_250_transition-MinZoom.mp4"
+        },
+    ]
+}

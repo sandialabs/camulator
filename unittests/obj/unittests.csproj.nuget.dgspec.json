@@ -1,0 +1,175 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/unittests/unittests.csproj": {}
+  },
+  "projects": {
+    "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/commonlib/commonlib.csproj": {
+      "restore": {
+        "projectUniqueName": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/commonlib/commonlib.csproj",
+        "projectName": "commonlib",
+        "projectPath": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/commonlib/commonlib.csproj",
+        "packagesPath": "/Users/aejohns/.nuget/packages/",
+        "projectStyle": "PackagesConfig",
+        "UsingMicrosoftNETSdk": false,
+        "configFilePaths": [
+          "/Users/aejohns/.nuget/NuGet/NuGet.Config"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/loglib/loglib.csproj": {
+                "projectPath": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/loglib/loglib.csproj"
+              }
+            }
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low"
+        },
+        "packagesConfigPath": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/commonlib/packages.config"
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/loglib/loglib.csproj": {
+      "restore": {
+        "projectUniqueName": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/loglib/loglib.csproj",
+        "projectName": "loglib",
+        "projectPath": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/loglib/loglib.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/unittests/unittests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/unittests/unittests.csproj",
+        "projectName": "unittests",
+        "projectPath": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/unittests/unittests.csproj",
+        "packagesPath": "/Users/aejohns/.nuget/packages/",
+        "outputPath": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/unittests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/aejohns/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "targetAlias": "net48",
+            "projectReferences": {
+              "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/commonlib/commonlib.csproj": {
+                "projectPath": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/commonlib/commonlib.csproj"
+              },
+              "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/loglib/loglib.csproj": {
+                "projectPath": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/loglib/loglib.csproj"
+              },
+              "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/videolib/videolib.csproj": {
+                "projectPath": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/videolib/videolib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net48": {
+          "targetAlias": "net48",
+          "dependencies": {
+            "LibVLCSharp": {
+              "target": "Package",
+              "version": "[3.9.3, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.13.0, )"
+            },
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )",
+              "autoReferenced": true
+            },
+            "System.Memory": {
+              "target": "Package",
+              "version": "[4.6.3, )"
+            },
+            "VideoLAN.LibVLC.Windows.GPL": {
+              "target": "Package",
+              "version": "[3.0.21, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
+            "xunit.v3": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.303/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/videolib/videolib.csproj": {
+      "restore": {
+        "projectUniqueName": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/videolib/videolib.csproj",
+        "projectName": "videolib",
+        "projectPath": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/videolib/videolib.csproj",
+        "packagesPath": "/Users/aejohns/.nuget/packages/",
+        "projectStyle": "PackagesConfig",
+        "UsingMicrosoftNETSdk": false,
+        "configFilePaths": [
+          "/Users/aejohns/.nuget/NuGet/NuGet.Config"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/loglib/loglib.csproj": {
+                "projectPath": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/loglib/loglib.csproj"
+              }
+            }
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low"
+        },
+        "packagesConfigPath": "/Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/videolib/packages.config"
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    }
+  }
+}

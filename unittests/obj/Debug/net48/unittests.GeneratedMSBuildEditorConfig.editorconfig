@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = unittests
+build_property.ProjectDir = /Users/aejohns/Library/CloudStorage/OneDrive-SandiaNationalLaboratories/work/camsim/github2/unittests/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

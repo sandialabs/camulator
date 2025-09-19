@@ -1,0 +1,57 @@
+<p-panel>
+  <ng-template #header>
+    <b>Base Directory</b>
+  </ng-template>
+  <p-inputgroup class="col-9">
+    <p-inputgroup-addon>
+      <i class="pi pi-folder-open"></i>
+    </p-inputgroup-addon>
+    <p-floatlabel variant="on">
+      <input pInputText id="folder" name="folder" [(ngModel)]="baseDirectory" />
+      <label for="folder">Folder</label>
+    </p-floatlabel>
+    <p-inputgroup-addon>
+      <p-button icon="pi pi-question-circle" (click)="onGetFilesQuestion()"></p-button>
+    </p-inputgroup-addon>
+    <p-button type="button" (click)="onGetFilesInFolder()" severity="info">Retrieve</p-button>
+  </p-inputgroup>
+
+  <p-accordion value="1">
+    <p-accordion-panel value="2">
+      <p-accordion-header>Files at {{ baseDirectory }}</p-accordion-header>
+      <p-accordion-content>
+        <p-table [value]="files()" size="small" stripedRows>
+          <ng-template #header>
+            <tr>
+              <th></th>
+              <th>Filename</th>
+              <th>Size (bytes)</th>
+              <th>Duration (ms)</th>
+              <th>FPS</th>
+              <th>Width x Height</th>
+              <th>Codec</th>
+            </tr>
+          </ng-template>
+          <ng-template #body let-file>
+            <tr>
+              <td><p-button icon="pi pi-plus-circle" (click)="addStream(file)" severity="info" size="small" [rounded]="true"></p-button></td>
+              <td>{{ file.Filename }}</td>
+              <td>{{ file.Size }}</td>
+              <td>{{ file.DurationMS }}</td>
+              <td>{{ file.FramesPerSecond }}</td>
+              <td>{{ file.Width }} x {{ file.Height }}</td>
+              <td>{{ file.Codec }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </p-accordion-content>
+    </p-accordion-panel>
+  </p-accordion>
+
+  <p-dialog header="Base Directory" [modal]="true" [(visible)]="baseDirectoryDialogVisible">
+    <span>Get the files available in the specified folder.
+      <p>When specified, click the 'Retrieve' button to acquire the files in that folder. They will then be available to select from in the Stream selections.
+      <p>A file outside of the base directory can also be manually entered. Just provide the full path.
+    </span>
+  </p-dialog>
+</p-panel>

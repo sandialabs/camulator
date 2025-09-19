@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.testing.platform/1.6.3/buildTransitive/netstandard2.0/Microsoft.Testing.Platform.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.testing.platform/1.6.3/buildTransitive/netstandard2.0/Microsoft.Testing.Platform.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.testing.platform.msbuild/1.6.3/buildTransitive/Microsoft.Testing.Platform.MSBuild.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.testing.platform.msbuild/1.6.3/buildTransitive/Microsoft.Testing.Platform.MSBuild.targets')" />
+    <Import Project="$(NuGetPackageRoot)xunit.v3.core/2.0.1/buildTransitive/xunit.v3.core.targets" Condition="Exists('$(NuGetPackageRoot)xunit.v3.core/2.0.1/buildTransitive/xunit.v3.core.targets')" />
+    <Import Project="$(NuGetPackageRoot)videolan.libvlc.windows.gpl/3.0.21/build/VideoLAN.LibVLC.Windows.GPL.targets" Condition="Exists('$(NuGetPackageRoot)videolan.libvlc.windows.gpl/3.0.21/build/VideoLAN.LibVLC.Windows.GPL.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.netframework.referenceassemblies.net48/1.0.3/build/Microsoft.NETFramework.ReferenceAssemblies.net48.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.netframework.referenceassemblies.net48/1.0.3/build/Microsoft.NETFramework.ReferenceAssemblies.net48.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.codecoverage/17.13.0/build/netstandard2.0/Microsoft.CodeCoverage.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.codecoverage/17.13.0/build/netstandard2.0/Microsoft.CodeCoverage.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.net.test.sdk/17.13.0/build/net462/Microsoft.NET.Test.Sdk.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.net.test.sdk/17.13.0/build/net462/Microsoft.NET.Test.Sdk.targets')" />
+  </ImportGroup>
+</Project>

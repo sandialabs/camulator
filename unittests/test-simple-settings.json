@@ -1,0 +1,11 @@
+﻿{
+    "StartingPort": 6000,
+    "Streams": [
+        {
+            "File": "2023-Hoverfly_500-Night.mp4"
+        },
+        {
+            "Text": "It's been a hard day's night"
+        }
+    ]
+}

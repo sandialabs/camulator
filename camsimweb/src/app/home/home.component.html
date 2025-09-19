@@ -1,0 +1,52 @@
+<div class="p-formgrid p-grid p-fluid">
+  <p-toolbar>
+    <ng-template #start>
+      <img src="cameraicon.png" alt="Security cameras" width="64" height="64">
+    </ng-template>
+    <ng-template #center>
+      <img src="camulatortitle.png" alt="Camulator" width="200" />
+      <!-- <h1 class="text-2xl font-medium">Camulator Settings Editor</h1> -->
+    </ng-template>
+    <ng-template #end>
+      <p-button type="button" (click)="submit()" class="p-grid p-jc-end">Submit</p-button>
+    </ng-template>
+  </p-toolbar>
+
+  <p-panel>
+    <ng-template #header>
+      <b>Starting Port</b>
+    </ng-template>
+    <p-inputgroup class="col-9">
+      <p-inputgroup-addon>
+        <i class="pi pi-tag"></i>
+      </p-inputgroup-addon>
+      <p-floatlabel variant="on">
+        <p-inputNumber id="folder" name="startingPort" [(ngModel)]="startingPort" useGrouping="false" />
+        <label for="startingPort">Starting port</label>
+      </p-floatlabel>
+      <p-inputgroup-addon>
+        <p-button icon="pi pi-question-circle" (click)="onStartingPortQuestion()"></p-button>
+      </p-inputgroup-addon>
+    </p-inputgroup>
+  </p-panel>
+
+  <p-dialog header="Starting Port" [modal]="true" [(visible)]="startingPortDialogVisible">
+    <span>The starting port to use when ports are automatically assigned</span>
+  </p-dialog>
+
+  <app-base-directory></app-base-directory>
+
+  <p-panel>
+    <ng-template #header>
+      <b>Streams <p-badge value="{{ settings()?.Streams?.length }}" severity="secondary" badgeSize="large"/></b>
+    </ng-template>
+    @for (camera of settings()?.Streams; track camera.id) {
+      <app-rtspform [rtsp]="camera" [settings]="settings()" (rtspSubmitted)="onSubmitted($event)" (delete)="onDeleteStream(camera.id)" />
+    }
+    <br />
+    <p-button type="button" icon="pi pi-plus-circle" iconPos="left" label="Add new stream" (click)="onAddNewCamera()" severity="info"></p-button>
+  </p-panel>
+
+  <app-about></app-about>
+</div>
+

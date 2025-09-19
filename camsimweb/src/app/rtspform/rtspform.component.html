@@ -1,0 +1,93 @@
+<div class="p-formgrid p-field p-grid p-fluid">
+  <!-- <form (ngSubmit)="rtspSubmitted.emit(this.theRTSP);" class="p-grid p-fluid"> -->
+    <p-inputgroup>
+
+      <p-selectButton
+        class="col"
+        [options]="options"
+        [(ngModel)]="optionsValue"
+        optionLabel="label"
+        optionValue="value"
+        name="selections"
+        />
+
+      @if(optionsValue === 'file') {
+        <p-inputgroup class="col-9">
+          <p-inputgroup-addon>
+            <i class="pi pi-video"></i>
+          </p-inputgroup-addon>
+          <p-select
+            [options]="streamFiles()"
+            optionLabel="Filename"
+            optionValue="Filename"
+            [(ngModel)]="theRTSP.File"
+            [editable]="true"
+            placeholder="Select a file to stream, or enter a filename">
+          </p-select>
+          <p-inputgroup-addon>
+            <p-button icon="pi pi-question-circle" (click)="onFileQuestion()"></p-button>
+          </p-inputgroup-addon>
+        </p-inputgroup>
+      } @else if (optionsValue === 'text') {
+        <p-inputgroup class="col-9">
+          <p-inputgroup-addon>
+            <i class="pi pi-align-justify"></i>
+          </p-inputgroup-addon>
+          <p-floatlabel variant="on">
+            <input pInputText id="text" name="text" [(ngModel)]="theRTSP.Text" />
+            <label for="text">Text</label>
+          </p-floatlabel>
+          <p-floatlabel variant="on">
+            <p-input-number id="fps" name="fps" [(ngModel)]="theRTSP.FPS" useGrouping="false" (keyup)="onFPSChange($event)" />
+            <label for="fps>">FPS</label>
+          </p-floatlabel>
+          <!-- <p-select
+            [options]="validFPS"
+            [(ngModel)]='theRTSP.FPS'
+            [editable]='true'
+            optionLabel="label"
+            optionValue="value"
+            placeholder="Choose the frames-per-second">
+          </p-select> -->
+          <p-inputgroup-addon>
+            <p-button icon="pi pi-question-circle" (click)="onTextQuestion()"></p-button>
+          </p-inputgroup-addon>
+        </p-inputgroup>
+      }
+
+      <p-dialog header="Video File Stream" [modal]="true" [(visible)]="fileStreamDialogVisible">
+        <span class="p-text-secondary">The video file that will be streamed over the specified port
+        </span>
+      </p-dialog>
+      <p-dialog header="Text Stream" [modal]="true" [(visible)]="textStreamDialogVisible">
+        <span class="p-text-secondary" ngNonBindable>
+          The text that will be streamed over the specified port
+          <p>These values will be replaced:
+          <br /><code>{{datetime}}</code> will show the current date and time
+          <br /><code>{{date}}</code> will show the current date
+          <br /><code>{{time}}</code> will show the current time
+        </span>
+      </p-dialog>
+
+      <p-inputgroup class="col">
+        <p-float-label variant="on">
+          <p-input-number id="port" name="port" [(ngModel)]="theRTSP.Port" useGrouping="false" (keyup)="onPortChange($event)" />
+          <label for="port>">Port</label>
+        </p-float-label>
+      </p-inputgroup>
+
+      <p-confirmpopup />
+      <p-inputgroup class="col">
+        <p-inputgroup-addon>
+          <p-button icon="pi pi-trash" (click)="confirmDelete($event)" severity="danger" [rounded]="true"></p-button>
+        </p-inputgroup-addon>
+      </p-inputgroup>
+      <!-- <p-button type="submit" class="col" (click)="onSubmit()">Submit</p-button> -->
+
+    </p-inputgroup>
+
+    <div>
+      <p-message severity="warn" [hidden]="message === null">{{message}}</p-message>
+    </div>
+  <!-- </form> -->
+</div>
