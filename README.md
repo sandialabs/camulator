@@ -75,3 +75,9 @@ The `Streams` section indicates what is streamed over which port. It is an array
 
 An installer has been developed using Advanced Installer. It will install both the Camulator app and the CamSimWeb app.
 
+### Releases
+
+| Release | Date | Comment |
+| --- | --- | --- |
+| [1.0.101](https://github.com/sandialabs/camulator/releases/tag/v.1.0.101) | 2025/09/19 | Initial release |
+
