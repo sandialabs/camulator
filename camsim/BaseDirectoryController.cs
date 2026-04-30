@@ -23,6 +23,9 @@ namespace camsim
             List<StreamData> streams = new List<StreamData>();
             Stopwatch sw = Stopwatch.StartNew();
 
+            // Can't pass an async (file) to the lambda, so we'll have to handle
+            // the async nature of ParseMedia 'manually'
+
             Parallel.ForEach(files, (file) =>
             {
                 FileInfo fi = new FileInfo(file);

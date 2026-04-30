@@ -1,6 +1,7 @@
 ﻿using LibVLCSharp.Shared;
 using loglib;
 using System;
+using System.Diagnostics;
 using System.Net;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading;
@@ -16,7 +17,7 @@ namespace videolib
         private Task _task;
         private MediaPlayer _mp;
 
-        public TextPlayer(string text, IPAddress ipAddress, int port, int fps, CancellationTokenSource cancel) : base(ipAddress, port, fps)
+        public TextPlayer(string text, IPAddress ipAddress, int port, int fps) : base(ipAddress, port, fps)
         {
             _text = text;
             _ts = new TextStream(() => text + $"\n\n{ipAddress}:{port}");
@@ -24,20 +25,22 @@ namespace videolib
             {
                 EnableHardwareDecoding = true
             };
-            _cancel = cancel;
+            _cancel = new CancellationTokenSource();
         }
 
         public override void Dispose(bool disposing)
         {
             if (disposing)
             {
-                base.Dispose(disposing);
-
                 Stop();
+
+                _mp?.Dispose();
+                _mp = null;
 
                 _ts?.Dispose();
                 _ts = null;
             }
+            base.Dispose(disposing);
         }
 
         public override string ToString()
@@ -55,32 +58,48 @@ namespace videolib
             _task = Task.Run(async () =>
             {
                 StreamToPipeWriter streamWriter = new StreamToPipeWriter(_ts.JPEGStream, Writer);
-                long delayMS = 1000 / _fps;
-                DateTime? lastDT = null;
+                Stopwatch sw = Stopwatch.StartNew();
+                long delayMS = 1000 / Math.Max(1, _fps);
+                long nextTick = 0;
 
                 _mp.Play();
 
                 while (_cancel.IsCancellationRequested == false)
                 {
-                    DateTime now = DateTime.Now;
+                    long now = sw.ElapsedMilliseconds;
 
-                    if (lastDT.HasValue == false || (now - lastDT.Value).TotalMilliseconds > delayMS)
+                    if (now > nextTick)
                     {
                         _ts.Output();
-                        (bool isCompleted, bool isCanceled) result = await streamWriter.Write(_cancel);
+                        (bool isCompleted, bool isCanceled) result = await streamWriter.Write(_cancel.Token);
 
-                        lastDT = now;
+                        nextTick = now + delayMS;
                     }
 
-                    _cancel.Token.WaitHandle.WaitOne(25);
+                    Thread.Sleep(25);
                 }
             }, _cancel.Token);
+
+            try
+            {
+                _mp.Stop();
+            }
+            catch (Exception ex)
+            {
+                Logger.Default().Error(ex);
+            }
 
             return true;
         }
 
         public void Stop()
         {
+            Task waitForTask = _task;
+
+            _cancel.Cancel();
+
+            waitForTask?.Wait(1000);
+
             _task = null;
         }
     }

@@ -23,17 +23,33 @@ namespace videolib
 
         public int Copy(ref Memory<byte> mem, int bytes)
         {
-            if (bytes > _arrayLength)
-            {
-                _arrayLength = bytes + (int)(bytes * 0.1);
-                _array = new byte[_arrayLength];
-            }
+            EnsureCapacity(bytes);
 
             _stream.Position = 0;
-            int bytesRead = _stream.Read(_array, 0, bytes);
-            _array.AsMemory(0, bytesRead).CopyTo(mem);
 
-            return bytesRead;
+            int total = 0;
+            while (total < bytes)
+            {
+                int n = _stream.Read(_array, total, bytes - total);
+
+                // EOF or stream changed under us
+                if (n == 0)
+                    break;
+                total += n;
+            }
+
+            _array.AsMemory(0, total).CopyTo(mem);
+
+            return total;
+        }
+
+        private void EnsureCapacity(int bytes)
+        {
+            if (bytes <= _arrayLength)
+                return;
+
+            _arrayLength = bytes + (bytes / 10);
+            _array = new byte[_arrayLength];
         }
     }
 }

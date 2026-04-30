@@ -11,7 +11,6 @@ namespace camsim
     {
         private SettingsManager _settings;
         private IPAddress _localIP;
-        private CancellationTokenSource _cancel;
         private List<IPlayable> _players;
 
         public StreamingManager(SettingsManager settings, IPAddress localIP)
@@ -29,8 +28,7 @@ namespace camsim
         {
             Stop();
 
-            _cancel = new CancellationTokenSource();
-            _players = _settings.TheSettings.GetStreams(_localIP, _cancel);
+            _players = _settings.TheSettings.GetStreams(_localIP);
 
             if (_players == null)
                 return false;
@@ -42,12 +40,7 @@ namespace camsim
 
         public bool Stop()
         {
-            if (_players == null || _cancel == null)
-                return false;
-
-            _cancel.Cancel();
-            _players.ForEach(player => player.Stop());
-
+            _players?.ForEach(player => player.Stop());
             return true;
         }
 
@@ -60,7 +53,7 @@ namespace camsim
                 case SettingsManager.EChanges.RTSPAdded:
                     if(rtsp != null)
                     {
-                        IPlayable playable = rtsp.CreateStream(_localIP, _cancel);
+                        IPlayable playable = rtsp.CreateStream(_localIP);
                         if(playable != null)
                         {
                             _players.Add(playable);

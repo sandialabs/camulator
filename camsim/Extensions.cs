@@ -13,7 +13,7 @@ namespace camsim
 {
     public static class Extensions
     {
-        public static IPlayable CreateStream(this RTSP rtsp, IPAddress localIP, CancellationTokenSource cancel)
+        public static IPlayable CreateStream(this RTSP rtsp, IPAddress localIP)
         {
             if (rtsp.IsValid() == false)
                 return null;
@@ -30,13 +30,13 @@ namespace camsim
             }
             else if (string.IsNullOrEmpty(rtsp.Text) == false)
             {
-                playable = new TextPlayer(rtsp.Text, localIP, rtsp.Port.Value, rtsp.FPS, cancel);
+                playable = new TextPlayer(rtsp.Text, localIP, rtsp.Port.Value, rtsp.FPS);
             }
 
             return playable;
         }
 
-        public static List<IPlayable> GetStreams(this Settings settings, IPAddress localIP, CancellationTokenSource cancel)
+        public static List<IPlayable> GetStreams(this Settings settings, IPAddress localIP)
         {
             if (localIP == null || settings.Streams == null)
                 return null;
@@ -49,7 +49,7 @@ namespace camsim
 
             Parallel.ForEach(settings.Streams, v =>
             {
-                IPlayable stream = CreateStream(v, localIP, cancel);
+                IPlayable stream = CreateStream(v, localIP);
 
                 if (stream != null)
                 {

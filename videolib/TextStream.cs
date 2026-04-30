@@ -52,7 +52,12 @@ namespace videolib
             _graphics.Clear(Color.DarkSlateGray);
             _graphics.DrawString(str, _font, _brush, _padding, _strFormat);
 
+            _jpegOutputMemoryStream.Position = 0;
+            _jpegOutputMemoryStream.SetLength(0);
+
             _bitmap.Save(_jpegOutputMemoryStream, ImageFormat.Jpeg);
+
+            _jpegOutputMemoryStream.Position = 0;
 
             Logger.Default().Debug($"TextStream.Output: {str} took {stopwatch.ElapsedMilliseconds} ms").Flush();
         }
@@ -86,9 +91,9 @@ namespace videolib
 
             (string, string)[] replacements =
             {
-                ("{{datetime}}", now.ToString("yyyy/MM/dd\nhh:mm:ss.fff")),
+                ("{{datetime}}", now.ToString("yyyy/MM/dd\nHH:mm:ss.fff")),
                 ("{{date}}", now.ToString("yyyy/MM/dd")),
-                ("{{time}}", now.ToString("hh:mm:ss.fff"))
+                ("{{time}}", now.ToString("HH:mm:ss.fff"))
             };
 
             foreach ((string, string) replace in replacements)

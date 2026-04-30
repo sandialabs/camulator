@@ -30,10 +30,10 @@ namespace videolib
 
         static FilePlayer()
         {
-            _libVLC = new LibVLC(enableDebugLogs: false);
+            _libVLC = new LibVLC(enableDebugLogs: true);
             _libVLC.Log += (obj, args) =>
             {
-                Logger.Default().Debug("VLCPlayer: " + args.Message);
+                Logger.Default().Debug("FilePlayer: " + args.Message);
             };
         }
 

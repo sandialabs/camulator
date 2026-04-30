@@ -1,0 +1,204 @@
+{
+  "StartingPort": 6000,
+  "Streams": [
+    {
+      "File": "2023-Hoverfly_500-Night.mp4",
+      "Text": null,
+      "Port": 6000,
+      "FPS": 4
+    },
+    {
+      "File": null,
+      "Text": "Testing\n{{datetime}}",
+      "Port": 7000,
+      "FPS": 1
+    },
+    {
+      "File": "AXIS-1000_meters_night-Person.mp4",
+      "Text": null,
+      "Port": 6001,
+      "FPS": 4
+    },
+    {
+      "File": "AXIS_1000_Day.mp4",
+      "Text": null,
+      "Port": 6002,
+      "FPS": 4
+    },
+    {
+      "File": "Axis_1000_inandout.mp4",
+      "Text": null,
+      "Port": 6003,
+      "FPS": 4
+    },
+    {
+      "File": "AXIS_250_Inandout.mp4",
+      "Text": null,
+      "Port": 6004,
+      "FPS": 4
+    },
+    {
+      "File": "AXIS_Day_2000.mp4",
+      "Text": null,
+      "Port": 6005,
+      "FPS": 4
+    },
+    {
+      "File": "AXIS_Dust_Storm_inandout.mp4",
+      "Text": null,
+      "Port": 6006,
+      "FPS": 4
+    },
+    {
+      "File": "AXIS_IR_Transition.mp4",
+      "Text": null,
+      "Port": 6007,
+      "FPS": 4
+    },
+    {
+      "File": "AXIS_NIGHT_2000.mp4",
+      "Text": null,
+      "Port": 6008,
+      "FPS": 4
+    },
+    {
+      "File": "AXIS_Thermal_transition-MinZoom.mp4",
+      "Text": null,
+      "Port": 6009,
+      "FPS": 4
+    },
+    {
+      "File": "Axis_transition.mp4",
+      "Text": null,
+      "Port": 6010,
+      "FPS": 4
+    },
+    {
+      "File": "AXIS_Visible_250_transition-MinZoom.mp4",
+      "Text": null,
+      "Port": 6011,
+      "FPS": 4
+    },
+    {
+      "File": "BOSCH9000I-DustStorm_inandout.mp4",
+      "Text": null,
+      "Port": 6012,
+      "FPS": 4
+    },
+    {
+      "File": "BOSCH_1000_meters_night-Person.mp4",
+      "Text": null,
+      "Port": 6013,
+      "FPS": 4
+    },
+    {
+      "File": "BOSCH_1000_NIGHT.mp4",
+      "Text": null,
+      "Port": 6014,
+      "FPS": 4
+    },
+    {
+      "File": "BOSCH_Day_2000.mp4",
+      "Text": null,
+      "Port": 6015,
+      "FPS": 4
+    },
+    {
+      "File": "BOSCH_Thermal_250_transition-MinZoom.mp4",
+      "Text": null,
+      "Port": 6016,
+      "FPS": 4
+    },
+    {
+      "File": "BOSCH_Visible_transition-MinZoom.mp4",
+      "Text": null,
+      "Port": 6017,
+      "FPS": 4
+    },
+    {
+      "File": "Hoverfly_1000_night.mp4",
+      "Text": null,
+      "Port": 6018,
+      "FPS": 4
+    },
+    {
+      "File": "InfinitiIR_1000_meters_night-Person.mp4",
+      "Text": null,
+      "Port": 6019,
+      "FPS": 4
+    },
+    {
+      "File": "INFINITI_DAY_2000.mp4",
+      "Text": null,
+      "Port": 6020,
+      "FPS": 4
+    },
+    {
+      "File": "INFINITI_NIGHT_2000.mp4",
+      "Text": null,
+      "Port": 6021,
+      "FPS": 4
+    },
+    {
+      "File": "Infiniti_Thermal_250_transition-MinZoom.mp4",
+      "Text": null,
+      "Port": 6022,
+      "FPS": 4
+    },
+    {
+      "File": "Infiniti_transition.mp4",
+      "Text": null,
+      "Port": 6023,
+      "FPS": 4
+    },
+    {
+      "File": "Infiniti_Visible_250_transition-MinZoom.mp4",
+      "Text": null,
+      "Port": 6024,
+      "FPS": 4
+    },
+    {
+      "File": "OpgalIR-1000_meters_night-Person.mp4",
+      "Text": null,
+      "Port": 6025,
+      "FPS": 4
+    },
+    {
+      "File": "OPGAL_1000_day.mp4",
+      "Text": null,
+      "Port": 6026,
+      "FPS": 4
+    },
+    {
+      "File": "OPGAL_IR_1000.mp4",
+      "Text": null,
+      "Port": 6027,
+      "FPS": 4
+    },
+    {
+      "File": "OPGAL_IR_Transition.mp4",
+      "Text": null,
+      "Port": 6030,
+      "FPS": 4
+    },
+    {
+      "File": "Opgal_Thermal_250_transition-MinZoom.mp4",
+      "Text": null,
+      "Port": 6028,
+      "FPS": 4
+    },
+    {
+      "File": "Opgal_Visible_250_transition-MinZoom.mp4",
+      "Text": null,
+      "Port": 6029,
+      "FPS": 4
+    },
+    {
+      "File": "testing123",
+      "Text": "",
+      "Port": 7001,
+      "FPS": 4
+    }
+  ],
+  "BaseDirectory": "C:\\Camulator\\Representative Videos"
+}

@@ -1,0 +1,12 @@
+{
+    "StartingPort": 6000,
+    "Streams": [
+        {
+            "File": null,
+            "Text": "Testing\n{{datetime}}",
+            "Port": 7000,
+            "FPS": 5
+        }
+   ],
+    "BaseDirectory": "C:\\Users\\aejohns\\dev\\camulator-github\\Representative Videos"
+}
